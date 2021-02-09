@@ -21,7 +21,16 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
-function isBushSafe() {}
+function allPinkBerries(bushBerryColours) {
+  return bushBerryColours === "pink";
+}
+
+function isBushSafe(bushBerryColours) {
+  if (bushBerryColours.every(allPinkBerries)) {
+    return "Bush is safe to eat from";
+  }
+  return "Toxic! Leave bush alone!";
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -44,13 +53,13 @@ function test(test_name, actual, expected) {
 }
 
 test(
-  "isBushSafe funtion works - case 1",
+  "isBushSafe function works - case 1",
   isBushSafe(bushBerryColours1),
   "Toxic! Leave bush alone!"
 );
 
 test(
-  "isBushSafe funtion works - case 1",
+  "isBushSafe function works - case 2",
   isBushSafe(bushBerryColours2),
   "Bush is safe to eat from"
 );

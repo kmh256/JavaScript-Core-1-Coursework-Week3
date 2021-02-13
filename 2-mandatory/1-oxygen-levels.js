@@ -13,9 +13,10 @@
 
 function findSafeOxygenLevel(oxygenLevel) {
   for (i = 0; i < oxygenLevel.length; i++) {
-    let checkForSafeOxygenLevel = oxygenLevel[i].substring(0,4).replace('%','');
-    if (checkForSafeOxygenLevel > 19.5 && checkForSafeOxygenLevel < 23.5) {
-      return checkForSafeOxygenLevel.concat('%');
+    let checkForSafeOxygenLevel = parseFloat(oxygenLevel[i]);
+    let isOxygenLevelSafe = checkForSafeOxygenLevel > 19.5 && checkForSafeOxygenLevel < 23.5;
+    if (isOxygenLevelSafe) {
+      return oxygenLevel[i];
     }
   }
 }
